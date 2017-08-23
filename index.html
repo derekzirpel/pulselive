@@ -1,0 +1,65 @@
+<!Doctype html>
+<html ng-app="playersApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Cache-control" content="public,max-age=604800000">
+
+        <title>Pulselive</title>
+
+        <link href="./css/styles.css" rel="stylesheet" />
+
+        <script src="./angular/angular.min.js"></script>
+        <script src="./js/datos.js"></script>
+
+    </head>
+    <body ng-controller="AllPlayerssCtrl">
+        <section>
+            <div id="contenedor">
+                <div class="player">
+                    <select id="select-players" ng-model="Jugador" 
+                    ng-options="jugador as (jugador.player.name.first + ' ' + jugador.player.name.last) for jugador in players track by jugador.player.id">
+                    </select>
+                    <span class="fondo-sup"><img src="img/fondo_sup.png" /></span>                    
+                </div>
+                <div class="content-player">
+                    <div class="jugador">
+                        <img src="assets/p{{Jugador.player.id}}.png" width="160px" height="223px"/>
+                    </div>
+                    <div class="img-team">
+                        <span class="img-escudo"><img src="img/{{Jugador.player.currentTeam.name}}.png" width="65px"/></span>
+                    </div>
+                    <p class="name-player">{{Jugador.player.name.first}} {{Jugador.player.name.last}} <br />
+                        <span class="pos-player">{{Jugador.player.info.positionInfo}}</span>
+                    </p>
+                    <div class="stadistics">
+                        <div class="cont-desc-player" ng-repeat="stat in Jugador.stats">
+                            <div class="desc-player separador" ng-if="stat.name == 'appearances'">
+                                <span class="txt-estadistics">Appearances</span>
+                                <span class="num-estadistics">{{stat.value}}</span>
+                            </div>
+                            <div class="desc-player separador" ng-if="stat.name == 'goals'">
+                                <span class="txt-estadistics">Goals</span>
+                                <span class="num-estadistics">{{stat.value}}</span>
+                            </div>
+                            <div class="desc-player separador" ng-if="stat.name == 'goal_assist'">
+                                <span class="txt-estadistics">Assists</span>
+                                <span class="num-estadistics">{{stat.value}}</span>
+                            </div>
+                            <div class="desc-player separador" ng-if="stat.name == 'media'">
+                                <span class="txt-estadistics">Goals per match</span>
+                                <span class="num-estadistics">{{stat.value | number:4}}</span>
+                            </div>
+                            <div class="desc-player separador" ng-if="stat.name == 'media_pass'">
+                                <span class="txt-estadistics">Passes per minute</span>
+                                <span class="num-estadistics">{{stat.value | number:4}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>      
+        
+    </body>
+</html>

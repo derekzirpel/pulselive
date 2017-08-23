@@ -1,0 +1,92 @@
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0; 
+    height: 100%;
+    width: 100%; 
+}
+#contenedor{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    width: 300px;
+    height: 600px;
+    margin-left: -150px;
+}
+.player{
+    height: 300px;
+}
+.jugador{
+    position: absolute;
+    margin-top:-222px;
+    margin-left: 16px;
+}
+.fondo-sup{
+    float: right; 
+    margin-top: 20px;
+}
+.content-player{
+    position: absolute;
+    width: 100%;
+    height: 300px; 
+    background-color: #e90052;
+}
+select{
+    background-color: #eaeaea;
+    width: 268px;
+    height: 40px;
+    margin-left: 16px;
+    margin-top: 14px;
+    font-size: 16px;
+}
+.img-team{
+    background-color: #fff;
+    width: 82px;
+    height: 82px;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    float: right;
+    margin-top: -40px;
+    margin-right: 16px;
+    z-index: 1000;
+}
+.name-player{
+    font-size: 22px;
+    color: #fff;
+    width: 231px;
+    margin-left: 16px;
+}
+.pos-player{
+    font-size: 16px;
+}
+.desc-player{
+    width: 268px; 
+    height: 40px; 
+    margin-left: 16px; 
+    background-color: #eaeaea;
+}
+.cont-desc-player{
+    margin-top: 0;
+}
+.separador{
+    margin-top: 2px;
+}
+.txt-estadistics{
+    position: absolute;
+    margin-left: 16px;
+    margin-top: 12px;
+}
+.num-estadistics{
+    float: right;
+    margin-right: 16px;
+    margin-top: 12px;
+    font-weight: bold;
+}
+.stadistics{
+    margin-top: -15px;
+}
+.img-escudo{
+    position: absolute;
+    left: 70%;
+    margin-top: 7px;
+}
